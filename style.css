@@ -1,588 +1,225 @@
-/* ------------------------------
-   Reset
------------------------------- */
+<!DOCTYPE html>
+<html lang="en">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
+<title>A Letter Under the Blue Sky</title>
 
-    min-height:100vh;
 
-    display:flex;
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
 
-    justify-content:center;
 
-    align-items:center;
+<link rel="stylesheet" href="style.css">
 
+</head>
 
-    background:
-    linear-gradient(
-        180deg,
-        #f8eeee,
-        #f7f1e8,
-        #fffaf5
-    );
 
+<body>
 
-    font-family:"Cormorant Garamond", serif;
 
-    overflow:hidden;
+<!-- soft clouds -->
 
-}
+<div class="cloud cloud-one"></div>
+<div class="cloud cloud-two"></div>
 
 
 
-/* ------------------------------
-   Container
------------------------------- */
 
+<main class="container">
 
-.container{
 
-    width:100%;
+<!-- Intro -->
 
-    display:flex;
 
-    justify-content:center;
+<section class="intro" id="intro">
 
-    align-items:center;
 
-}
+<div class="envelope-wrapper">
 
 
+<div class="envelope">
 
-/* ------------------------------
-   Petals
------------------------------- */
 
+<div class="flap"></div>
 
-.petals span{
 
-    position:fixed;
+<div class="wax-seal">
+♡
+</div>
 
-    color:#e9c4cb;
 
-    opacity:.35;
+</div>
 
-    font-size:30px;
 
-}
+</div>
 
 
-.petals span:nth-child(1){
 
-    top:12%;
+<h1>
+A Letter Under the Blue Sky
+</h1>
 
-    left:15%;
 
-}
+<p class="tagline">
+a little memory saved for you
+</p>
 
 
-.petals span:nth-child(2){
 
-    bottom:18%;
+<button id="openButton" onclick="openLetter()">
 
-    right:12%;
+open the letter
 
-}
+</button>
 
 
-.petals span:nth-child(3){
+</section>
 
-    top:30%;
 
-    right:20%;
 
-}
 
 
 
 
+<!-- Letter -->
 
-/* ------------------------------
-   Intro
------------------------------- */
 
+<section class="letter" id="letter">
 
-.intro{
 
-    text-align:center;
 
-    padding:50px 60px;
+<div class="letter-paper">
 
 
-    background:rgba(255,250,245,.65);
 
+<div class="letter-seal">
+♡
+</div>
 
-    backdrop-filter:blur(8px);
 
 
-    border-radius:20px;
 
+<div class="date">
 
-    box-shadow:
-    0 20px 50px rgba(120,80,70,.12);
-  
-    transition:opacity .8s ease;
-  
-}
+23 July
 
+</div>
 
 
 
-/* ------------------------------
-   Envelope
------------------------------- */
 
+<h2>
+To My Blueberrypie
+</h2>
 
-.envelope-wrapper{
 
-    display:flex;
 
-    justify-content:center;
+<div class="subtitle">
 
-    margin-bottom:35px;
+a letter beneath the sky
 
-}
+</div>
 
 
 
 
-.envelope{
 
-    position:relative;
+<div class="letter-text">
 
-    width:120px;
 
-    height:80px;
+under the same blue sky,
 
+<br><br>
 
-    background:#fff9f0;
 
+I wanted to leave you a small piece of a memory.
 
-    border:1.5px solid #d9c0b5;
+Not something perfect,
 
+just something gentle.
 
-    border-radius:8px;
+<br><br>
 
 
-    box-shadow:
-    0 12px 25px rgba(100,70,60,.15);
+Thank you for every laugh,
 
+every little conversation,
 
-    perspective:800px;
+and every ordinary moment
 
-}
+that quietly became special.
 
+<br><br>
 
 
+I hope this new year of your life
 
-.flap{
+brings you peaceful mornings,
 
-    position:absolute;
+soft skies,
 
-    inset:0;
+beautiful memories,
 
+and little moments
 
-    background:#f9e8e7;
+that make your heart feel at home.
 
+<br><br>
 
-    clip-path:
-    polygon(
-    0 0,
-    100% 0,
-    50% 60%
-    );
 
+Some people become a quiet part
 
-    transform-origin:top;
+of our favorite memories.
 
+<br><br>
 
-    transition:.7s;
 
-}
+happy birthday,
 
+my blueberrypie.
 
 
+</div>
 
 
-.wax-seal{
 
-    position:absolute;
 
-    left:50%;
 
-    top:35px;
+<div class="signature">
 
+from your vanilla
 
-    transform:translateX(-50%);
+</div>
 
 
-    width:32px;
 
-    height:32px;
 
+<button class="back" onclick="goBack()">
 
-    border-radius:50%;
+← back
 
+</button>
 
-    background:
-    radial-gradient(
-    circle,
-    #f3d2d8,
-    #d99eaa
-    );
 
 
-    display:flex;
 
-    justify-content:center;
+</div>
 
-    align-items:center;
 
+</section>
 
-    color:white;
 
-    font-size:15px;
+</main>
 
 
-    box-shadow:
-    0 3px 10px rgba(100,60,70,.18);
 
-}
 
+<script src="script.js"></script>
 
 
+</body>
 
-
-/* ------------------------------
-   Text
------------------------------- */
-
-
-h1{
-
-    color:#80636b;
-
-    font-size:42px;
-
-    font-weight:500;
-
-    margin-bottom:12px;
-
-}
-
-
-
-.subtitle{
-
-    color:#b48792;
-
-    font-size:20px;
-
-    margin-bottom:30px;
-
-}
-
-
-
-
-
-/* ------------------------------
-   Buttons
------------------------------- */
-
-
-button{
-
-    padding:12px 35px;
-
-
-    border-radius:40px;
-
-
-    border:1px solid #d9bfc4;
-
-
-    background:#fff7f4;
-
-
-    color:#85636b;
-
-
-    font-family:inherit;
-
-
-    font-size:16px;
-
-
-    cursor:pointer;
-
-
-    transition:.35s;
-
-}
-
-
-
-button:hover{
-
-    background:#f8e5e5;
-
-
-    transform:translateY(-3px);
-
-
-    box-shadow:
-    0 10px 20px rgba(120,80,80,.12);
-
-}
-
-
-
-/* ------------------------------
-   Letter
------------------------------- */
-
-
-.letter{
-
-    display:none;
-
-
-    width:470px;
-
-    max-width:90vw;
-
-
-    max-height:85vh;
-
-
-    overflow-y:auto;
-
-
-    padding:45px;
-
-
-    background:#fffaf1;
-
-
-    border:1px solid #decfc1;
-
-
-    border-radius:12px;
-
-
-    box-shadow:
-    0 25px 60px rgba(100,70,60,.18);
-
-
-    opacity:0;
-
-    transform:translateY(25px);
-
-
-    transition:1.2s;
-
-}
-
-
-
-
-.letter.show{
-
-    display:block;
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-
-
-.letter-border{
-
-    position:relative;
-
-    border:1px solid #ead8c8;
-
-    padding:35px;
-
-}
-
-
-
-
-
-/* ------------------------------
-   Letter Seal
------------------------------- */
-
-
-.letter-seal{
-
-    position:absolute;
-
-
-    top:-20px;
-
-    right:-20px;
-
-
-    width:55px;
-
-    height:55px;
-
-
-    border-radius:50%;
-
-
-    background:
-    radial-gradient(
-    circle,
-    #f1ccd5,
-    #d89aa8
-    );
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    color:white;
-
-    font-size:20px;
-
-
-    box-shadow:
-    0 8px 20px rgba(100,60,70,.15);
-
-}
-
-
-
-
-
-/* ------------------------------
-   Letter Text
------------------------------- */
-
-
-.letter h2{
-
-    color:#80636b;
-
-    font-size:32px;
-
-    font-weight:500;
-
-    margin-bottom:8px;
-
-}
-
-
-
-
-.letter-date{
-
-    color:#b98c96;
-
-    font-style:italic;
-
-    margin-bottom:25px;
-
-}
-
-
-
-
-.letter-content{
-
-    color:#6f5b54;
-
-
-    font-size:18px;
-
-
-    line-height:2;
-
-}
-
-
-
-
-
-.signature{
-
-    margin-top:35px;
-
-
-    font-family:"Parisienne",cursive;
-
-
-    font-size:32px;
-
-
-    color:#b48792;
-
-}
-
-
-
-
-.back{
-
-    margin-top:35px;
-
-}
-
-
-
-
-
-/* ------------------------------
-   Mobile
------------------------------- */
-
-
-@media(max-width:600px){
-
-    .intro{
-
-        padding:35px 25px;
-
-    }
-
-
-    h1{
-
-        font-size:32px;
-
-    }
-
-
-    .letter{
-
-        padding:25px;
-
-    }
-
-
-    .letter-border{
-
-        padding:25px;
-
-    }
-
-
-}
+</html>
