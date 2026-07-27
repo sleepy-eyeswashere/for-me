@@ -7,12 +7,11 @@ function openLetter() {
     const openButton = document.getElementById("openButton");
 
 
-
     openButton.disabled = true;
 
 
 
-    // باز شدن در پاکت
+    // opening envelope
 
     flap.style.transform = "rotateX(180deg)";
 
@@ -21,6 +20,7 @@ function openLetter() {
     setTimeout(() => {
 
 
+        // fade intro
 
         intro.style.opacity = "0";
 
@@ -34,7 +34,7 @@ function openLetter() {
 
 
 
-            // نمایش نامه
+            // show letter
 
             letter.style.display = "block";
 
@@ -42,7 +42,9 @@ function openLetter() {
 
             requestAnimationFrame(() => {
 
+
                 letter.classList.add("show");
+
 
             });
 
@@ -52,11 +54,12 @@ function openLetter() {
 
 
 
-    },700);
+    },900);
 
 
 
 }
+
 
 
 
@@ -73,9 +76,11 @@ function goBack(){
 
 
 
-    // مخفی شدن نامه
+
+    // hide letter
 
     letter.classList.remove("show");
+
 
 
 
@@ -90,11 +95,17 @@ function goBack(){
         intro.style.display = "block";
 
 
-        intro.style.opacity = "1";
+
+        setTimeout(() => {
+
+            intro.style.opacity = "1";
+
+        },50);
 
 
 
-        // بستن پاکت
+
+        // close envelope
 
         flap.style.transform = "rotateX(0deg)";
 
