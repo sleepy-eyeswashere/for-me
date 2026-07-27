@@ -11,7 +11,7 @@ function openLetter() {
 
 
 
-    // opening envelope
+    // باز شدن پاکت
 
     flap.style.transform = "rotateX(180deg)";
 
@@ -20,7 +20,7 @@ function openLetter() {
     setTimeout(() => {
 
 
-        // fade intro
+        // محو شدن صفحه اول
 
         intro.style.opacity = "0";
 
@@ -34,7 +34,7 @@ function openLetter() {
 
 
 
-            // show letter
+            // نمایش نامه
 
             letter.style.display = "block";
 
@@ -42,9 +42,7 @@ function openLetter() {
 
             requestAnimationFrame(() => {
 
-
                 letter.classList.add("show");
-
 
             });
 
@@ -65,6 +63,7 @@ function openLetter() {
 
 
 
+
 function goBack(){
 
 
@@ -77,7 +76,7 @@ function goBack(){
 
 
 
-    // hide letter
+    // مخفی کردن نامه
 
     letter.classList.remove("show");
 
@@ -105,7 +104,7 @@ function goBack(){
 
 
 
-        // close envelope
+        // بستن دوباره پاکت
 
         flap.style.transform = "rotateX(0deg)";
 
