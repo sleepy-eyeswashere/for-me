@@ -1,225 +1,797 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ------------------------------
+   Reset
+------------------------------ */
 
-<head>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Letter Under the Blue Sky</title>
 
+body{
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+    min-height:100vh;
 
+    display:flex;
 
-<link rel="stylesheet" href="style.css">
+    justify-content:center;
 
-</head>
+    align-items:center;
 
 
-<body>
+    background:
+    linear-gradient(
+        180deg,
+        #c6dae9,
+        #e5f0f6,
+        #f8fbfd
+    );
 
 
-<!-- soft clouds -->
+    font-family:"Cormorant Garamond", serif;
 
-<div class="cloud cloud-one"></div>
-<div class="cloud cloud-two"></div>
+    overflow:hidden;
 
+}
 
 
 
-<main class="container">
+/* ------------------------------
+   Clouds
+------------------------------ */
 
 
-<!-- Intro -->
+.cloud{
 
+    position:fixed;
 
-<section class="intro" id="intro">
+    background:white;
 
+    opacity:.35;
 
-<div class="envelope-wrapper">
+    filter:blur(8px);
 
+    border-radius:50%;
 
-<div class="envelope">
+}
 
 
-<div class="flap"></div>
 
+.cloud-one{
 
-<div class="wax-seal">
-♡
-</div>
+    width:250px;
 
+    height:80px;
 
-</div>
+    top:12%;
 
+    left:8%;
 
-</div>
+}
 
 
 
-<h1>
-A Letter Under the Blue Sky
-</h1>
+.cloud-two{
 
+    width:320px;
 
-<p class="tagline">
-a little memory saved for you
-</p>
+    height:100px;
 
+    bottom:15%;
 
+    right:5%;
 
-<button id="openButton" onclick="openLetter()">
+}
 
-open the letter
 
-</button>
 
 
-</section>
 
 
+/* ------------------------------
+   Container
+------------------------------ */
 
 
+.container{
 
+    width:100%;
 
+    display:flex;
 
-<!-- Letter -->
+    justify-content:center;
 
+    align-items:center;
 
-<section class="letter" id="letter">
+}
 
 
 
-<div class="letter-paper">
 
 
+/* ------------------------------
+   Intro
+------------------------------ */
 
-<div class="letter-seal">
-♡
-</div>
 
+.intro{
 
+    text-align:center;
 
 
-<div class="date">
+    padding:50px 65px;
 
-23 July
 
-</div>
+    background:
 
+    rgba(255,255,255,.55);
 
 
 
-<h2>
-To My Blueberrypie
-</h2>
+    backdrop-filter:blur(10px);
 
 
 
-<div class="subtitle">
+    border-radius:22px;
 
-a letter beneath the sky
 
-</div>
 
+    box-shadow:
 
+    0 25px 55px rgba(80,120,150,.15);
 
 
 
-<div class="letter-text">
+    transition:opacity .8s ease;
 
+}
 
-under the same blue sky,
 
-<br><br>
 
 
-I wanted to leave you a small piece of a memory.
 
-Not something perfect,
 
-just something gentle.
+/* ------------------------------
+   Envelope
+------------------------------ */
 
-<br><br>
 
+.envelope-wrapper{
 
-Thank you for every laugh,
+    display:flex;
 
-every little conversation,
+    justify-content:center;
 
-and every ordinary moment
 
-that quietly became special.
+    margin-bottom:35px;
 
-<br><br>
+}
 
 
-I hope this new year of your life
 
-brings you peaceful mornings,
 
-soft skies,
+.envelope{
 
-beautiful memories,
 
-and little moments
+    position:relative;
 
-that make your heart feel at home.
 
-<br><br>
+    width:120px;
 
 
-Some people become a quiet part
+    height:82px;
 
-of our favorite memories.
 
-<br><br>
+    background:#fffdf8;
 
 
-happy birthday,
 
-my blueberrypie.
+    border:1px solid #c8d7e2;
 
 
-</div>
 
+    border-radius:8px;
 
 
 
+    perspective:900px;
 
-<div class="signature">
 
-from your vanilla
 
-</div>
+    box-shadow:
 
+    0 12px 25px rgba(70,100,120,.15);
 
+}
 
 
-<button class="back" onclick="goBack()">
 
-← back
 
-</button>
 
+.flap{
 
 
+    position:absolute;
 
-</div>
 
+    inset:0;
 
-</section>
 
+    background:#edf5fa;
 
-</main>
 
 
+    clip-path:
 
+    polygon(
+    0 0,
+    100% 0,
+    50% 60%
+    );
 
-<script src="script.js"></script>
 
 
-</body>
+    transform-origin:top;
 
-</html>
+
+
+    transition:.7s;
+
+}
+
+
+
+
+
+.wax-seal{
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    top:37px;
+
+
+
+    transform:translateX(-50%);
+
+
+
+    width:34px;
+
+
+    height:34px;
+
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    #dcecf5,
+    #9dbbd0
+    );
+
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    color:white;
+
+
+
+    font-size:17px;
+
+
+
+    box-shadow:
+
+    0 4px 12px rgba(70,100,120,.2);
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Intro Text
+------------------------------ */
+
+
+h1{
+
+
+    color:#607d94;
+
+
+    font-size:40px;
+
+
+    font-weight:500;
+
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+.tagline{
+
+
+    color:#829caf;
+
+
+    font-size:19px;
+
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+
+
+button{
+
+
+    padding:12px 35px;
+
+
+
+    border-radius:40px;
+
+
+
+    border:1px solid #bfd2df;
+
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+
+    color:#607d94;
+
+
+
+    font-family:inherit;
+
+
+
+    font-size:16px;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:.35s;
+
+}
+
+
+
+
+
+button:hover{
+
+
+    background:#edf5fa;
+
+
+    transform:translateY(-3px);
+
+
+
+    box-shadow:
+
+    0 10px 25px rgba(80,120,150,.15);
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Letter
+------------------------------ */
+
+
+.letter{
+
+
+    display:none;
+
+
+
+    width:470px;
+
+
+    max-width:90vw;
+
+
+    max-height:85vh;
+
+
+
+    overflow-y:auto;
+
+
+
+    opacity:0;
+
+
+
+    transform:translateY(30px);
+
+
+
+    transition:
+
+    opacity 1.2s ease,
+
+    transform 1.2s ease;
+
+}
+
+
+
+
+
+.letter.show{
+
+
+    display:block;
+
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+}
+
+
+
+
+
+
+.letter-paper{
+
+
+    position:relative;
+
+
+
+    padding:45px;
+
+
+
+    background:#fffdf7;
+
+
+
+    border-radius:12px;
+
+
+
+    border:1px solid #d8d5c8;
+
+
+
+    box-shadow:
+
+    0 25px 60px rgba(80,90,90,.18);
+
+
+
+}
+
+
+
+.letter-paper::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:15px;
+
+
+
+    border:1px solid #dccb9f;
+
+
+
+    pointer-events:none;
+
+
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Letter Seal
+------------------------------ */
+
+
+.letter-seal{
+
+
+    position:absolute;
+
+
+    top:20px;
+
+
+    right:20px;
+
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    #d9ebf5,
+    #8eafc6
+    );
+
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+
+    box-shadow:
+
+    0 7px 18px rgba(80,100,120,.18);
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Letter Content
+------------------------------ */
+
+
+.date{
+
+
+    color:#9aabb8;
+
+
+    font-size:15px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.letter h2{
+
+
+    color:#607d94;
+
+
+    font-size:32px;
+
+
+    font-weight:500;
+
+
+    margin-bottom:5px;
+
+}
+
+
+
+
+
+.subtitle{
+
+
+    font-family:"Parisienne",cursive;
+
+
+    color:#8faec2;
+
+
+    font-size:32px;
+
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.letter-text{
+
+
+    color:#657786;
+
+
+    font-size:18px;
+
+
+    line-height:2;
+
+}
+
+
+
+
+
+.signature{
+
+
+    margin-top:35px;
+
+
+    font-family:"Parisienne",cursive;
+
+
+    color:#8faec2;
+
+
+    font-size:30px;
+
+}
+
+
+
+
+
+
+.back{
+
+
+    margin-top:35px;
+
+}
+
+
+
+
+
+
+
+/* ------------------------------
+   Scroll
+------------------------------ */
+
+
+.letter::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+
+.letter::-webkit-scrollbar-thumb{
+
+    background:#c5d6e2;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+
+@media(max-width:600px){
+
+
+    .intro{
+
+        padding:35px 25px;
+
+    }
+
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+
+
+    .letter-paper{
+
+        padding:30px;
+
+    }
+
+
+
+    .letter-text{
+
+        font-size:16px;
+
+    }
+
+
+}
